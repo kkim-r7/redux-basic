@@ -9,10 +9,11 @@ class CoursesPage extends React.Component {
         title: "",
       },
     };
+
+    this.handleChange = this.handleChange.bind(this); // now the function is only bound once!
   }
 
   handleChange(event) {
-    debugger;
     const course = { ...this.state.course, title: event.target.value };
     this.setState({ course });
   }
@@ -23,7 +24,7 @@ class CoursesPage extends React.Component {
         <h4>Add Course</h4>
         <input
           type="text"
-          onChange={this.handleChange.bind(this)} // new function is allocated on every render so need to change
+          onChange={this.handleChange}
           value={this.state.course.title}
         />
         <input type="submit" value="save" />
