@@ -10,13 +10,13 @@ class CoursesPage extends React.Component {
       },
     };
 
-    this.handleChange = this.handleChange.bind(this); // now the function is only bound once!
+    //this.handleChange = this.handleChange.bind(this); if update just func to arrow func binding is no required
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const course = { ...this.state.course, title: event.target.value };
     this.setState({ course });
-  }
+  };
   render() {
     return (
       <form>
